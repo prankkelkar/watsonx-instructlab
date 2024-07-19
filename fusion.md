@@ -35,6 +35,34 @@ The following security measures were followed for IBM Storage Fusion product:
 * Security and Privacy by Design (SPbD) compliance certified by IBM BISO to ensure security and privacy compliance
 * Container Software certifications (IBM Certification and Red Hat Certifications) to ensure adherence to container security standards.
 
+### User Interface
+
+
+The Log Collector panel shows the 6 tiles which refers to 6 collection sets predefined in above configmap `isf-serviceability-operator-collection-sets` and allow the user to choose the collection sets desired.
+1. Backup and restore
+2. Compute Nodes
+3. Network switches
+4. Storage controller
+5. System Health check
+6. Administration
+
+Each collectionset already collects relevant k8 resources and namespaces. 
+For e.g. storage includes scale must gather logs and storage related logs, backup restore collects spp agent server logs and other spp related logs, system health collectset include imm logs, appliance hardware related logs, Network switches covers nw switches related to logs and Administration contains audit logs and OpenShift configuration related logs
+Please refer collectionset configmap for latest details.
+
+After log collection is complete you will see one of following three statuses for each request in the **UI**.
+* `Complete` : log collection was completed without any erros and is ready to download.
+* `Partial` : The log collection was complete however there were some errors while collecting few items from the list of requested logs. Download the logs and check for `status.json` file  in the zip to understand more about errors. 
+*(Note: Logcollector is designed in such a way that it does not stop log collection upon encountering an error. It will instead log the error and proceed with collecting rest of the requested items.)*
+* `Error`: The log collection failed or timed out. Please try again.
+
+### Eventmanager severity
+
+Event Manager will look for a `severity` field in the `labels` map. Event Manager processing will be based on the value in this field:
+* INFO - A Kubernetes event with type=Normal will be created from this alert. Alerts of this type should convey general expected occurences. For example, "A physical volume was allocated for XXX at time YYY." By default, this event will be in the OCP event queue up to 3 hours after its last duplicate was encountered.
+* WARNING - A Kubernetes event with type=Warning will be created from this alert. Alerts of this type should convey suspected conditions that will not open a ticket but should be investigated by the user. For example, "Available disk space on physical volume XXX has dropped below 20%." By default, this event will be in the OCP event queue up to 7 days after its last duplicate was encountered.
+* CRITICAL - A Kubernetes event with type=Warning will be created from this alert, and a ticket will be opened if this alert is in the allow-tickets config map (see below). Alerts of this type should convey definite problems that need immediate resolution. By default, this event will be in the OCP event queue up to 14 days after its last duplicate was encountered.
+
 
 ## Verifying image signatures
 Digital signatures provide a way for consumers of content to ensure that what they download is both authentic (it originated from the expected source) and has integrity (it is what we expect it to be). All images for IBM Storage Fusion are signed. This page describes how to verify the signatures on those images.
