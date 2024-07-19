@@ -1,5 +1,5 @@
 ## Product overview
-Last Updated: 2024-05-21
+
 Organizations must quickly adjust to the changing business and outside influences that are causing rapid change, resulting in a need for business agility and faster business insights. Clients need applications and data to adjust and shift in response to dynamic market demands. They also need diverse and simplified tools and data services to build anywhere, at any pace, and for applications and data to scale dynamically, achieve peak performance, and adhere to security requirements.
 
 Companies need a consistent way to deploy applications across on-premises infrastructure and public clouds, and not all of them are deploying containers to create that portability and consistency between cloud and on-premises environments.
@@ -24,18 +24,17 @@ Benefits offered by IBM Storage Fusion.
 ## IBM Storage Expert Care
 IBM Storage Expert Care is a simplified method of selecting services and support for systems at the time of the purchase. IBM Storage Expert Care is designed to simplify and standardize the support approach for IBM Storage Fusion HCI Systemwith simple straightforward pricing and selection of services.
 
-##Security in IBM Storage Fusion.
+## Security in IBM Storage Fusion.
 IBM Storage Fusion is a secure platform to deploy your applications.
-
 The following security measures were followed for IBM Storage Fusion product:
-Penetration testing to check for exploitable vulnerabilities
-Threat modelling and threat assessment to ensure that threats are assessed and resolved
-Static scan to maintain high code quality and to ensure that no security vulnerabilities are left in the code
-Dynamic scan to detect and remove runtime vulnerabilities
-Open Source Scan to detect and remove open source vulnerabilities in open source libraries that are used by IBM Storage Fusion
-Security and Privacy by Design (SPbD) compliance certified by IBM BISO to ensure security and privacy compliance
-Container Software certifications (IBM Certification and Red Hat Certifications) to ensure adherence to container security standards.
+* Penetration testing to check for exploitable vulnerabilities
+* Threat modelling and threat assessment to ensure that threats are assessed and resolved
+* Static scan to maintain high code quality and to ensure that no security vulnerabilities are left in the code
+* Dynamic scan to detect and remove runtime vulnerabilities
+* Open Source Scan to detect and remove open source vulnerabilities in open source libraries that are used by IBM Storage Fusion
+* Security and Privacy by Design (SPbD) compliance certified by IBM BISO to ensure security and privacy compliance
+* Container Software certifications (IBM Certification and Red Hat Certifications) to ensure adherence to container security standards.
 
 
-Verifying image signatures
+## Verifying image signatures
 Digital signatures provide a way for consumers of content to ensure that what they download is both authentic (it originated from the expected source) and has integrity (it is what we expect it to be). All images for IBM Storage Fusion are signed. This page describes how to verify the signatures on those images.
